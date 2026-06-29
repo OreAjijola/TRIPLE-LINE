@@ -9,7 +9,6 @@ export const checkoutSchema = z.object({
   state: z.string().min(2, "Please enter a state or province"),
   zip: z.string().min(3, "Please enter a valid postal code"),
   country: z.string().min(2, "Please select a country"),
-  shippingMethod: z.enum(["standard", "express"]),
 });
 
 export const contactSchema = z.object({
@@ -22,7 +21,8 @@ export const newsletterSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
 });
 
-export const paymentIntentSchema = z.object({
+export const initializePaymentSchema = z.object({
+  email: z.string().email("Invalid email"),
   items: z.array(
     z.object({
       id: z.string(),

@@ -11,12 +11,12 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com",
+      "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.paystack.co",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
       "img-src 'self' data: blob: https://framerusercontent.com https://*.supabase.co https://images.unsplash.com",
-      "connect-src 'self' https://api.stripe.com https://*.supabase.co",
-      "frame-src https://js.stripe.com",
+      "connect-src 'self' https://api.paystack.co https://*.supabase.co",
+      "frame-src https://js.paystack.co https://checkout.paystack.com",
     ].join("; "),
   },
 ];

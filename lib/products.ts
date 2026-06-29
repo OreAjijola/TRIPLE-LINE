@@ -228,6 +228,6 @@ export function getRelatedProducts(product: Product, count = 4): Product[] {
     .slice(0, count);
 }
 
-export function formatPrice(cents: number): string {
-  return `$${(cents / 100).toFixed(2)}`;
+export function formatPrice(amount: number): string {
+  return `₦${amount.toLocaleString("en-NG")}`;
 }

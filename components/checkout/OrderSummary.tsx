@@ -7,9 +7,10 @@ interface OrderSummaryProps {
   shippingMethod: "standard" | "express";
 }
 
+// Must match rates in /api/initialize-payment/route.ts
 const SHIPPING_RATES = {
-  standard: 599,
-  express: 1499,
+  standard: 1500,
+  express: 3500,
 };
 
 export function OrderSummary({ items, shippingMethod }: OrderSummaryProps) {
@@ -47,7 +48,7 @@ export function OrderSummary({ items, shippingMethod }: OrderSummaryProps) {
         </div>
         <div className="flex justify-between text-sm">
           <span className="text-[#6B6B6B]">
-            Shipping ({shippingMethod === "standard" ? "Standard 5–7 days" : "Express 1–2 days"})
+            Delivery ({shippingMethod === "standard" ? "Standard 5–7 days" : "Express 1–2 days"})
           </span>
           <span className="text-[#1A1A1A]">{formatPrice(shipping)}</span>
         </div>
