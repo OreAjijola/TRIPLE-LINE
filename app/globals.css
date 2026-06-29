@@ -1,26 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-muted: #6B6B6B;
+  --color-accent: #2D2D2D;
+  --color-sale: #C0392B;
+  --color-border: #E8E8E4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-muted: #6B6B6B;
+  --color-accent: #2D2D2D;
+  --color-sale: #C0392B;
+  --color-border: #E8E8E4;
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* Skip to content */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 8px 16px;
+  background: var(--color-accent);
+  color: white;
+  z-index: 9999;
+  font-size: 0.875rem;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* Horizontal scroll row - hide scrollbar */
+.scroll-row {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Playfair serif utility */
+.font-serif {
+  font-family: 'Playfair Display', serif;
 }
